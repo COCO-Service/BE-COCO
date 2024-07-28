@@ -1,4 +1,3 @@
-/*
 package org.example.becoco.domain.post.service;
 
 import lombok.RequiredArgsConstructor;
@@ -16,10 +15,7 @@ public class PostListViewService {
     public List<PostListResponse> allPostsView() {
         return postRepository.findAll()
                 .stream()
-                .map(PostListResponse::new)
+                .map(PostListResponse::of)
                 .toList();
     }
-
-
 }
-*/

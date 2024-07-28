@@ -11,17 +11,19 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 public class PostListResponse  {
-    Date updateDate;
-    String type;
-    String title;
-    String location;
-    String content;
+    private Date updateDate;
+    private String type;
+    private String title;
+    private String location;
+    private String content;
 
-    public void PostResponse(Post post) {
-        this.updateDate = post.getUpdateDate();
-        this.type = post.getType();
-        this.title = post.getTitle();
-        this.location = post.getLocation();
-        this.content = post.getContent();
+    public static PostListResponse of(Post post) {
+        return PostListResponse.builder()
+                .updateDate(post.getUpdateDate())
+                .type(post.getType())
+                .title(post.getTitle())
+                .location(post.getLocation())
+                .content(post.getContent())
+                .build();
     }
 }
