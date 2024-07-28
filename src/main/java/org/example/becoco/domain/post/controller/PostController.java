@@ -15,7 +15,7 @@ public class PostController {
     private final PostCreateService createService;
     private final PostDeleteService deleteService;
     private final PostViewService viewService;
-//    private final PostListViewService listViewService;
+    private final PostListViewService postListViewService;
     private final PostUpdateService updateService;
 
     @PostMapping("/write")
@@ -33,10 +33,10 @@ public class PostController {
         viewService.postView(id);
     }
 
-/*    @GetMapping()
+    @GetMapping()
     public List<PostListResponse> postLitView(){
-        return listViewService.allPostsView();
-    }*/
+        return postListViewService.allPostsView();
+    }
 
     @PatchMapping("/{id}")
     private void postUpdate(@PathVariable("id") Long id, @RequestBody PostRequest request) {
