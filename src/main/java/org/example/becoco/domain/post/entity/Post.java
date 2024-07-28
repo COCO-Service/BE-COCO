@@ -28,13 +28,21 @@ public class Post {
     @Column(name = "title", length = 30, nullable = false)
     private String title;
 
-    @Column(name = "type", length = 30, nullable = false)
-    private boolean type;
+    @Column(name = "type", nullable = false)
+    private String type;
 
     @Column(name = "location", nullable = false, length = 200)
     private String location;
 
     @Column(name = "content", length = 2500, columnDefinition = "TEXT", nullable = false)
     private String content;
+
+    public void update(Long postId, Date updateDate, String title, String location, String content) {
+        this.postId = postId;
+        this.updateDate = updateDate;
+        this.title = title;
+        this.location = location;
+        this.content = content;
+    }
 
 }

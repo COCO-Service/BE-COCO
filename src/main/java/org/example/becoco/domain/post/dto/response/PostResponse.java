@@ -1,16 +1,32 @@
 package org.example.becoco.domain.post.dto.response;
 
+import jakarta.persistence.Column;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import org.example.becoco.domain.post.entity.Post;
 
 import java.util.Date;
 
 @Builder
-public record PostResponse(
-        Date updateDate,
-        boolean type,
-        String title,
-        String location,
-        String content
-) {
-    public PostResponse postResponse(Date updateDate, String title, String location, String content) {}
+@Getter
+@Setter
+public class PostResponse {
+    String writer;
+    Date createDate;
+    Date updateDate;
+    String type;
+    String title;
+    String location;
+    String content;
+
+    public PostResponse(String writer, Date createDate, Date updateDate, String type, String title, String location, String content) {
+        this.writer = writer;
+        this.createDate = createDate;
+        this.updateDate = updateDate;
+        this.type = type;
+        this.title = title;
+        this.location = location;
+        this.content = content;
+    }
 }

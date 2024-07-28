@@ -16,13 +16,13 @@ public class PostCreateService {
     public void postCreate(PostRequest request) {
         postRepository.save(
             Post.builder()
-                    .postId(request.postId())
-                    .writer(request.writer())
-                    .createDate(request.createDate())
-                    .type(request.type())
-                    .title(request.title())
-                    .location(request.location())
-                    .content(request.content())
+                    .postId(request.getPostId())
+                    .writer(request.getWriter())
+                    .createDate(request.getCreateDate())
+                    .type(request.getType())
+                    .title(request.getTitle())
+                    .location(request.getLocation())
+                    .content(request.getContent())
                     .build()
         );
     }
