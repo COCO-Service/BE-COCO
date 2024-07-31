@@ -19,7 +19,7 @@ public class PostViewService {
         Post post = postRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("고객은 NULL일 수 없습니다."));
 
-        return new PostResponse(post.getWriter(), post.getCreateDate(), post.getUpdateDate(), post.getType(), post.getTitle(), post.getLocation(), post.getContent());
+        return new PostResponse(post.getWriter(), post.getCreateDate(), post.getUpdateDate(), post.getType(), post.getTitle(), post.getLocation(), post.getContent(), post.getProfile());
     }
 
 }

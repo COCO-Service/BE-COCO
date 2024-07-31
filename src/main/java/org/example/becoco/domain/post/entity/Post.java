@@ -37,12 +37,20 @@ public class Post {
     @Column(name = "content", length = 2500, columnDefinition = "TEXT", nullable = false)
     private String content;
 
-    public void update(Long postId, Date updateDate, String title, String location, String content) {
+    private String profile;
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
+
+
+    public void update(Long postId, Date updateDate, String title, String location, String content, String profile) {
         this.postId = postId;
         this.updateDate = updateDate;
         this.title = title;
         this.location = location;
         this.content = content;
+        this.profile = profile;
     }
 
 }

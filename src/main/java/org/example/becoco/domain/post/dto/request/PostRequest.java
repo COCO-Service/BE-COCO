@@ -16,5 +16,5 @@ public class PostRequest {
     String type;
     String location;
     String content;
-
+    String proFile;
 }

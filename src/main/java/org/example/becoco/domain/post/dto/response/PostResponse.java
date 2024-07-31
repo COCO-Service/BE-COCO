@@ -19,8 +19,9 @@ public class PostResponse {
     String title;
     String location;
     String content;
+    String proFile;
 
-    public PostResponse(String writer, Date createDate, Date updateDate, String type, String title, String location, String content) {
+    public PostResponse(String writer, Date createDate, Date updateDate, String type, String title, String location, String content, String proFile) {
         this.writer = writer;
         this.createDate = createDate;
         this.updateDate = updateDate;
@@ -28,5 +29,6 @@ public class PostResponse {
         this.title = title;
         this.location = location;
         this.content = content;
+        this.proFile = proFile;
     }
 }
