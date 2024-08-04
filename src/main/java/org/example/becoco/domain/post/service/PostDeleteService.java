@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 public class PostDeleteService {
     private final PostRepository postRepository;
 
-    public void postDelete(Long postId) {
-        Post post = postRepository.findById(postId).orElseThrow(() -> new RuntimeException("게시글을 찾을 수 없습니다."));
+    public void postDelete(Long id) {
+        Post post = postRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("게시글을 찾을 수 없습니다."));
+        postRepository.delete(post);
     }
 }

@@ -1,7 +1,8 @@
 package org.example.becoco.domain.post.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.post.dto.request.PostRequest;
+import org.example.becoco.domain.post.dto.request.PostCreateRequest;
+import org.example.becoco.domain.post.dto.request.PostUpdateRequest;
 import org.example.becoco.domain.post.entity.Post;
 import org.example.becoco.domain.post.repository.PostRepository;
 import org.springframework.stereotype.Service;
@@ -11,12 +12,10 @@ import org.springframework.stereotype.Service;
 public class PostUpdateService {
     private final PostRepository postRepository;
 
-    public void updatePost(long id, PostRequest request) {
+    public void updatePost(long id, PostUpdateRequest request) {
         Post post= postRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("게시글이 존재하지 않습니다."));
         post.update(
-            request.getPostId(),
-            request.getUpdateDate(),
             request.getTitle(),
             request.getLocation(),
             request.getContent()

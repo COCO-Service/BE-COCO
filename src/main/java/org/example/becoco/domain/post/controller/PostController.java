@@ -1,7 +1,8 @@
 package org.example.becoco.domain.post.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.post.dto.request.PostRequest;
+import org.example.becoco.domain.post.dto.request.PostCreateRequest;
+import org.example.becoco.domain.post.dto.request.PostUpdateRequest;
 import org.example.becoco.domain.post.dto.response.PostListResponse;
 import org.example.becoco.domain.post.service.*;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class PostController {
     private final PostUpdateService updateService;
 
     @PostMapping("/write")
-    private void postWrite(@RequestBody PostRequest request) {
+    private void postWrite(@RequestBody PostCreateRequest request) {
         createService.postCreate(request);
     }
 
@@ -39,7 +40,7 @@ public class PostController {
     }
 
     @PatchMapping("/{id}")
-    private void postUpdate(@PathVariable("id") Long id, @RequestBody PostRequest request) {
+    private void postUpdate(@PathVariable("id") Long id, @RequestBody PostUpdateRequest request) {
         updateService.updatePost(id, request);
     }
 }

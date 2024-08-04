@@ -2,55 +2,57 @@ package org.example.becoco.domain.post.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
+import java.time.LocalDate;
 import java.util.Date;
 
-@Table(name = "post")
+@Table(name = "tal_post")
 @Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Post {
+public class Post extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
 
-    @Column(name = "writer", nullable = false)
+    @Column(columnDefinition = "varchar(16)", nullable = false)
     private String writer;
 
-    @Column(name = "create_date", nullable = false)
-    private Date createDate;
+    @CreatedDate
+    @Column(name = "create_date")
+    private LocalDate createDate;
 
+    @LastModifiedDate
     @Column(name = "update_date")
-    private Date updateDate;
+    private LocalDate updateDate;
 
-    @Column(name = "title", length = 30, nullable = false)
+
+    @Column(columnDefinition = "varchar(50)", nullable = false)
     private String title;
 
     @Column(name = "type", nullable = false)
     private String type;
 
-    @Column(name = "location", nullable = false, length = 200)
+    @Column(columnDefinition = "varchar(200)", nullable = false)
     private String location;
 
-    @Column(name = "content", length = 2500, columnDefinition = "TEXT", nullable = false)
+    @Column(columnDefinition = "TEXT", length = 2500, nullable = false)
     private String content;
 
-    private String profile;
 
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "userId")
+//    private User user;
 
 
-    public void update(Long postId, Date updateDate, String title, String location, String content, String profile) {
-        this.postId = postId;
-        this.updateDate = updateDate;
+    public void update(String title, String location, String content) {
         this.title = title;
         this.location = location;
         this.content = content;
-        this.profile = profile;
     }
 
 }

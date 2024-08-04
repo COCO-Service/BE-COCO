@@ -5,13 +5,14 @@ import lombok.Builder;
 import lombok.Getter;
 import org.example.becoco.domain.post.entity.Post;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
 @Builder
 @AllArgsConstructor
 public class PostListResponse  {
-    private Date updateDate;
+    private LocalDate updateDate;
     private String type;
     private String title;
     private String location;
