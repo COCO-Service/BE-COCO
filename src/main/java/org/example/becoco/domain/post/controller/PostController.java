@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.becoco.domain.post.dto.request.PostCreateRequest;
 import org.example.becoco.domain.post.dto.request.PostUpdateRequest;
 import org.example.becoco.domain.post.dto.response.PostListResponse;
+import org.example.becoco.domain.post.dto.response.PostResponse;
 import org.example.becoco.domain.post.service.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,8 +31,8 @@ public class PostController {
     }
 
     @GetMapping("/{id}")
-    private void postView(@PathVariable("id") Long id) {
-        viewService.postView(id);
+    private PostResponse postView(@PathVariable("id") Long id) {
+        return viewService.postView(id);
     }
 
     @GetMapping()

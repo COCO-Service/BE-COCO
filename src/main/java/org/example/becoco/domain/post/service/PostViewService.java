@@ -14,8 +14,23 @@ public class PostViewService {
 
     public PostResponse postView(long id) {
         Post post = postRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("고객은 NULL일 수 없습니다."));
-        return new PostResponse(post.getWriter(), post.getCreateDate(), post.getUpdateDate(), post.getType(), post.getTitle(), post.getLocation(), post.getContent());
+                .orElseThrow(() -> new RuntimeException("post를 찾을 수 없습니다."));
+
+        return new PostResponse(post);
     }
+
+//    public PostResponse aView(long id) {
+//        Post post = postRepository.findById(id)
+//                .orElseThrow(() -> new RuntimeException("post를 찾을 수 없습니다."));
+//
+//        return new PostResponse(post);
+//    }
+//
+//    public PostResponse cView(long id) {
+//        Post post = postRepository.findById(id)
+//                .orElseThrow(() -> new RuntimeException("post를 찾을 수 없습니다."));
+//
+//        return new PostResponse(post);
+//    }
 
 }

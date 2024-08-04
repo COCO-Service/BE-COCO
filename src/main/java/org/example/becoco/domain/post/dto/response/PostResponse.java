@@ -1,8 +1,8 @@
 package org.example.becoco.domain.post.dto.response;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.becoco.domain.post.entity.Post;
 
 import java.time.LocalDate;
 
@@ -16,16 +16,14 @@ public class PostResponse {
     String title;
     String location;
     String content;
-    String proFile;
 
-    public PostResponse(String writer, LocalDate createDate, LocalDate updateDate, String type, String title, String location, String content) {
-        this.writer = writer;
-        this.createDate = createDate;
-        this.updateDate = updateDate;
-        this.type = type;
-        this.title = title;
-        this.location = location;
-        this.content = content;
+    public PostResponse(Post post) {
+        this.writer = post.getWriter();
+        this.createDate = post.getCreateDate();
+        this.updateDate = post.getUpdateDate();
+        this.type = post.getType();
+        this.title = post.getTitle();
+        this.location = post.getLocation();
+        this.content = post.getContent();
     }
-
 }
