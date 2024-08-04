@@ -43,9 +43,9 @@ public class Post extends BaseTimeEntity {
     private String content;
 
 
-//    @ManyToOne
-//    @JoinColumn(name = "userId")
-//    private User user;
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
 
 
     public void update(String title, String location, String content) {

@@ -19,18 +19,5 @@ public class PostViewService {
         return new PostResponse(post);
     }
 
-//    public PostResponse aView(long id) {
-//        Post post = postRepository.findById(id)
-//                .orElseThrow(() -> new RuntimeException("post를 찾을 수 없습니다."));
-//
-//        return new PostResponse(post);
-//    }
-//
-//    public PostResponse cView(long id) {
-//        Post post = postRepository.findById(id)
-//                .orElseThrow(() -> new RuntimeException("post를 찾을 수 없습니다."));
-//
-//        return new PostResponse(post);
-//    }
 
 }
