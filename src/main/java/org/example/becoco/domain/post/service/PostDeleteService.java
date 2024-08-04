@@ -12,7 +12,7 @@ public class PostDeleteService {
 
     public void postDelete(Long id) {
         Post post = postRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("게시글을 찾을 수 없습니다."));
+                        .orElseThrow(()-> new RuntimeException("Post not found"));
         postRepository.delete(post);
     }
 }
