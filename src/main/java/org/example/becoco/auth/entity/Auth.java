@@ -23,7 +23,7 @@ public class Auth {
     private String password;
     private String role;
 
-    public void update(String userName) {
+    public void getUserName(String userName) {
         this.userName = userName;
     }
 }
