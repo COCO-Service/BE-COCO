@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -22,14 +23,20 @@ public class AuthService {
 
     @Transactional
     public TokenResponse login(LoginRequest loginRequest) {
-        Auth auth = authRepository.findByUserName(loginRequest.getUserName()).orElseThrow(()->new RuntimeException(""));
+        Auth auth = authRepository.findByUserName(loginRequest.getUserName()).orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다."));
         if (!passwordEncoder.matches(loginRequest.getPassword(), auth.getPassword())) {
-            throw new RuntimeException("asdf");
+            throw new RuntimeException("비밀번호가 일치하지 않습니다.");
         }
         System.out.println(auth.getUserName());
-        return new TokenResponse(jwtProvider.createAccessToken(auth.getUserName()));
 
+        // 역할을 단일 문자열로 제공
+        return new TokenResponse(jwtProvider.createAccessToken(
+                auth.getUserName(),
+                auth.getPassword(),
+                List.of(auth.getRole())
+        ));
     }
+
 
     @Transactional
     public void signup(LoginRequest loginRequest) {
