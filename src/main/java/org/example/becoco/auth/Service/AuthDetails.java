@@ -3,9 +3,11 @@ package org.example.becoco.auth.Service;
 import lombok.AllArgsConstructor;
 import org.example.becoco.auth.entity.Auth;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Collections;
 
 @AllArgsConstructor
 public class AuthDetails implements UserDetails {
@@ -13,7 +15,8 @@ public class AuthDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        // 권한을 반환, role 필드를 사용한다고 가정
+        return Collections.singletonList(new SimpleGrantedAuthority(auth.getRole()));
     }
 
     @Override
@@ -23,7 +26,7 @@ public class AuthDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return auth.getPassword();
     }
 
     @Override
