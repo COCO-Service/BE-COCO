@@ -30,11 +30,7 @@ public class AuthService {
         System.out.println(auth.getUserName());
 
         // 역할을 단일 문자열로 제공
-        return new TokenResponse(jwtProvider.createAccessToken(
-                auth.getUserName(),
-                auth.getPassword(),
-                List.of(auth.getRole())
-        ));
+        return jwtProvider.getToken(auth);
     }
 
 
