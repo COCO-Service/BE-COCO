@@ -5,7 +5,7 @@ import org.example.becoco.domain.post.Exception.PostNotDeleteException;
 import org.example.becoco.domain.post.facade.PostFacade;
 import org.example.becoco.domain.post.repository.PostRepository;
 import org.example.becoco.domain.post.entity.Post;
-import org.example.becoco.domain.user.UserFacade;
+import org.example.becoco.domain.user.facade.UserFacade;
 import org.springframework.stereotype.Service;
 
 @Service
