@@ -1,4 +1,4 @@
-package org.example.becoco.domain.user;
+package org.example.becoco.domain.user.facade;
 
 import lombok.RequiredArgsConstructor;
 import org.example.becoco.domain.user.Exception.UserNotFoundException;
