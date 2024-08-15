@@ -20,7 +20,7 @@ public class PostListViewService {
     public PostListResponse typePostsView(Type type) {
         List<PostListElement> postList = postRepository.findAllByType(type)
                 .stream()
-                // 악명함수, 람다식
+                // 익명함수, 람다식
                 .map(post -> {
                     return PostListElement.builder()
                             .createDate(post.getCreateDate())
