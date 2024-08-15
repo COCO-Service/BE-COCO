@@ -2,6 +2,8 @@ package org.example.becoco.domain.user.facade;
 
 import lombok.RequiredArgsConstructor;
 import org.example.becoco.domain.user.Exception.UserNotFoundException;
+import org.example.becoco.domain.user.domain.User;
+import org.example.becoco.domain.user.domain.repository.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
