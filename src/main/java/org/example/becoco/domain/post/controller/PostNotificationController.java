@@ -7,7 +7,7 @@ import org.example.becoco.domain.post.dto.response.PostResponse;
 import org.example.becoco.domain.post.service.PostDeleteService;
 import org.example.becoco.domain.post.service.PostViewService;
 import org.example.becoco.domain.post.service.notification.NotificationCreateService;
-import org.example.becoco.domain.post.service.notification.NotificationUpdateService;
+import org.example.becoco.domain.post.service.PostUpdateService;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/post/notification")
 public class PostNotificationController {
     private final NotificationCreateService createService;
-    private final NotificationUpdateService updateService;
+    private final PostUpdateService updateService;
     private final PostDeleteService deleteService;
     private final PostViewService viewService;
 

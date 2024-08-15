@@ -7,6 +7,7 @@ import org.example.becoco.domain.post.dto.request.PostCreateRequest;
 import org.example.becoco.domain.post.entity.Post;
 import org.example.becoco.domain.post.entity.type.Type;
 import org.example.becoco.domain.post.repository.PostRepository;
+import org.example.becoco.domain.user.domain.User;
 import org.example.becoco.domain.user.facade.UserFacade;
 import org.springframework.stereotype.Service;
 

@@ -5,8 +5,8 @@ import org.example.becoco.domain.post.dto.request.PostCreateRequest;
 import org.example.becoco.domain.post.dto.response.PostResponse;
 import org.example.becoco.domain.post.dto.request.PostUpdateRequest;
 import org.example.becoco.domain.post.service.Complaint.ComplaintCreateService;
-import org.example.becoco.domain.post.service.Complaint.ComplaintUpdateService;
 import org.example.becoco.domain.post.service.PostDeleteService;
+import org.example.becoco.domain.post.service.PostUpdateService;
 import org.example.becoco.domain.post.service.PostViewService;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/post/complaint")
 public class PostComplaintController {
     private final ComplaintCreateService createService;
-    private final ComplaintUpdateService updateService;
+    private final PostUpdateService updateService;
     private final PostDeleteService deleteService;
     private final PostViewService viewService;
 
