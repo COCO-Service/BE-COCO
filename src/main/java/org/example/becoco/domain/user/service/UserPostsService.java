@@ -1,9 +1,9 @@
 package org.example.becoco.domain.user.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.post.dto.response.PostListElement;
-import org.example.becoco.domain.post.dto.response.PostListResponse;
-import org.example.becoco.domain.post.repository.PostRepository;
+import org.example.becoco.domain.post.presentation.dto.response.PostListElement;
+import org.example.becoco.domain.post.presentation.dto.response.PostListResponse;
+import org.example.becoco.domain.post.domain.repository.PostRepository;
 import org.example.becoco.domain.user.domain.User;
 import org.example.becoco.domain.user.facade.UserFacade;
 import org.springframework.stereotype.Service;

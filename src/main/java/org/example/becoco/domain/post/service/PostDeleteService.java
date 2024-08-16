@@ -1,10 +1,10 @@
 package org.example.becoco.domain.post.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.post.Exception.PostNotDeleteException;
+import org.example.becoco.domain.post.exception.PostNotDeleteException;
 import org.example.becoco.domain.post.facade.PostFacade;
-import org.example.becoco.domain.post.repository.PostRepository;
-import org.example.becoco.domain.post.entity.Post;
+import org.example.becoco.domain.post.domain.repository.PostRepository;
+import org.example.becoco.domain.post.domain.Post;
 import org.example.becoco.domain.user.domain.User;
 import org.example.becoco.domain.user.facade.UserFacade;
 import org.springframework.stereotype.Service;

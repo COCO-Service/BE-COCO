@@ -1,9 +1,9 @@
 package org.example.becoco.domain.post.facade;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.post.Exception.PostNotFoundException;
-import org.example.becoco.domain.post.entity.Post;
-import org.example.becoco.domain.post.repository.PostRepository;
+import org.example.becoco.domain.post.exception.PostNotFoundException;
+import org.example.becoco.domain.post.domain.Post;
+import org.example.becoco.domain.post.domain.repository.PostRepository;
 import org.springframework.stereotype.Component;
 
 @Component
