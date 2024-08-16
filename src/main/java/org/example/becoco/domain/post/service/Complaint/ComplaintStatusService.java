@@ -1,23 +1,23 @@
-package org.example.becoco.domain.post.service;
+package org.example.becoco.domain.post.service.Complaint;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.post.presentation.dto.request.PostUpdateRequest;
 import org.example.becoco.domain.post.domain.Post;
-import org.example.becoco.domain.post.facade.PostFacade;
 import org.example.becoco.domain.post.domain.repository.PostRepository;
-import org.example.becoco.domain.user.exception.UserNotCorrectException;
+import org.example.becoco.domain.post.facade.PostFacade;
+import org.example.becoco.domain.post.presentation.dto.request.ComplaintStatusRequest;
 import org.example.becoco.domain.user.domain.User;
+import org.example.becoco.domain.user.exception.UserNotCorrectException;
 import org.example.becoco.domain.user.facade.UserFacade;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PostUpdateService {
+public class ComplaintStatusService {
     private final PostRepository postRepository;
-    private final PostFacade postFacade;
     private final UserFacade userFacade;
+    private final PostFacade postFacade;
 
-    public void updatePost(long id, PostUpdateRequest request) {
+    private void statusChange(Long id, ComplaintStatusRequest request) {
         User user = userFacade.getCurrentUser();
         Post post = postFacade.findPostById(id);
 
@@ -27,11 +27,10 @@ public class PostUpdateService {
             throw UserNotCorrectException.EXCEPTION;
         }
 
-        post.update(
-            request.getTitle(),
-            request.getLocation(),
-            request.getContent()
-        );
+        post = Post.builder()
+                .status(request.isStatus())
+                .build();
+
         postRepository.save(post);
     }
 }
