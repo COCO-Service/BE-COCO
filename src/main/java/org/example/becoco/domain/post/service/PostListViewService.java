@@ -5,6 +5,7 @@ import org.example.becoco.domain.post.dto.response.PostListElement;
 import org.example.becoco.domain.post.dto.response.PostListResponse;
 import org.example.becoco.domain.post.entity.type.Type;
 import org.example.becoco.domain.post.repository.PostRepository;
+import org.example.becoco.domain.user.domain.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,9 +24,11 @@ public class PostListViewService {
                 // 익명함수, 람다식
                 .map(post -> {
                     return PostListElement.builder()
-                            .createDate(post.getCreateDate())
-                            .updateDate(post.getUpdateDate())
+                            .type(post.getType())
                             .title(post.getTitle())
+                            .user(post.getUser())
+                            .createDate(post.getCreateDate())
+                            .solved(post.isSolved())
                             .build();
                 })
                 .collect(Collectors.toList());
@@ -37,12 +40,14 @@ public class PostListViewService {
     public PostListResponse allPostsView() {
         List<PostListElement> postList = postRepository.findAll()
                 .stream()
-                // 악명함수, 람다식
+                // 익명함수, 람다식
                 .map(post -> {
                     return PostListElement.builder()
-                            .createDate(post.getCreateDate())
-                            .updateDate(post.getUpdateDate())
+                            .type(post.getType())
                             .title(post.getTitle())
+                            .user(post.getUser())
+                            .createDate(post.getCreateDate())
+                            .solved(post.isSolved())
                             .build();
                 })
                 .collect(Collectors.toList());

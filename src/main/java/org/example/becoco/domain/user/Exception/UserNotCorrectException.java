@@ -1,11 +1,11 @@
 package org.example.becoco.domain.user.Exception;
 
-import org.example.becoco.domain.global.error.exception.ErrorCode;
-import org.example.becoco.domain.global.error.exception.GlobalException;
+import org.example.becoco.domain.global.error.ErrorCode;
+import org.example.becoco.domain.global.error.exception.CustomException;
 
 
-public class UserNotCorrectException extends GlobalException {
-    public static final GlobalException EXCEPTION = new UserNotCorrectException();
+public class UserNotCorrectException extends CustomException {
+    public static final CustomException EXCEPTION = new UserNotCorrectException();
 
     private UserNotCorrectException() {
         super(ErrorCode.USER_NOT_CORRECT);
