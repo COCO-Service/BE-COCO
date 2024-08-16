@@ -1,4 +1,4 @@
-package org.example.becoco.domain.global;
+package org.example.becoco.global;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

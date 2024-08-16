@@ -1,4 +1,4 @@
-package org.example.becoco.domain.global.error;
+package org.example.becoco.global.error;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
