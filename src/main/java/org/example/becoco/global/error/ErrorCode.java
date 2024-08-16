@@ -1,10 +1,11 @@
 package org.example.becoco.global.error;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @Getter
-@RequiredArgsConstructor
+@AllArgsConstructor
 public enum ErrorCode {
     USER_NOT_CORRECT(401, "USER NOT CORRECT."),
     USER_NOT_FOUND(404, "USER NOT FOUND."),
