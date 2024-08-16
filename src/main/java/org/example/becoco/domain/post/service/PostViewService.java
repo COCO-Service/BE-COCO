@@ -1,10 +1,10 @@
 package org.example.becoco.domain.post.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.post.dto.response.PostResponse;
+import org.example.becoco.domain.post.presentation.dto.response.PostResponse;
 import org.example.becoco.domain.post.facade.PostFacade;
-import org.example.becoco.domain.post.repository.PostRepository;
-import org.example.becoco.domain.post.entity.Post;
+import org.example.becoco.domain.post.domain.repository.PostRepository;
+import org.example.becoco.domain.post.domain.Post;
 import org.springframework.stereotype.Service;
 
 
