@@ -1,6 +1,6 @@
 package org.example.becoco.domain.post.exception;
 
-import org.example.becoco.global.error.ErrorCode;
+import org.example.becoco.global.error.exception.ErrorCode;
 import org.example.becoco.domain.global.error.exception.CustomException;
 
 

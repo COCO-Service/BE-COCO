@@ -1,9 +1,9 @@
-package org.example.becoco.global.security.config;
+package org.example.becoco.global.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.example.becoco.global.security.jwt.JwtProvider;
-import org.example.becoco.global.filter.JwtTokenFilter;
+import org.example.becoco.global.security.jwt.JwtTokenFilter;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.DefaultSecurityFilterChain;

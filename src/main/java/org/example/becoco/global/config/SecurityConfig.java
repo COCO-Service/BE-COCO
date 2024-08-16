@@ -1,4 +1,4 @@
-package org.example.becoco.global.security.config;
+package org.example.becoco.global.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
