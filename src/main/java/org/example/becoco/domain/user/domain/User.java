@@ -1,8 +1,10 @@
 package org.example.becoco.domain.user.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 @Entity
+@Getter
 public class User {
 
     @Id
@@ -20,4 +22,5 @@ public class User {
 
     @Column(name = "student_id", unique = true, nullable = false)
     private int studentId;
+
 }
