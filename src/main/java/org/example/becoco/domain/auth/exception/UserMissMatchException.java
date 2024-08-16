@@ -1,6 +1,6 @@
 package org.example.becoco.domain.auth.exception;
 
-import org.example.becoco.global.error.ErrorCode;
+import org.example.becoco.global.error.exception.ErrorCode;
 import org.example.becoco.global.error.exception.CustomException;
 
 public class UserMissMatchException extends CustomException {

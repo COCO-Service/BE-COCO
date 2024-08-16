@@ -1,11 +1,11 @@
 package org.example.becoco.domain.post.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.post.dto.request.PostUpdateRequest;
-import org.example.becoco.domain.post.entity.Post;
+import org.example.becoco.domain.post.presentation.dto.request.PostUpdateRequest;
+import org.example.becoco.domain.post.domain.Post;
 import org.example.becoco.domain.post.facade.PostFacade;
-import org.example.becoco.domain.post.repository.PostRepository;
-import org.example.becoco.domain.user.Exception.UserNotCorrectException;
+import org.example.becoco.domain.post.domain.repository.PostRepository;
+import org.example.becoco.domain.user.exception.UserNotCorrectException;
 import org.example.becoco.domain.user.domain.User;
 import org.example.becoco.domain.user.facade.UserFacade;
 import org.springframework.stereotype.Service;
