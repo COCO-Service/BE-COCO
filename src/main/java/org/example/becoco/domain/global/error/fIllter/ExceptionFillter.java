@@ -1,12 +1,13 @@
-package org.example.becoco.domain.global.error;
+package org.example.becoco.domain.global.error.fIllter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.global.error.exception.ErrorCode;
-import org.example.becoco.domain.global.error.exception.GlobalException;
+import org.example.becoco.domain.global.error.Entity.ErrorResponseEntity;
+import org.example.becoco.domain.global.error.ErrorCode;
+import org.example.becoco.domain.global.error.exception.CustomException;
 import org.springframework.http.MediaType;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -21,7 +22,7 @@ public class ExceptionFillter extends OncePerRequestFilter {
             HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException {
         try {
             filterChain.doFilter(request, response);
-        } catch (GlobalException e) {
+        } catch (CustomException e) {
             sendErrorMessage(response, e.getErrorCode());
         } catch (Exception e) {
             logger.error(e);
@@ -30,14 +31,13 @@ public class ExceptionFillter extends OncePerRequestFilter {
     }
 
     private void sendErrorMessage(HttpServletResponse response, ErrorCode errorCode) throws IOException {
-        ErrorResponse errorResponse = ErrorResponse.builder()
-                .status(errorCode.getStatus())
-                .code(errorCode.getCode())
+        ErrorResponseEntity errorResponse = ErrorResponseEntity.builder()
+                .status(errorCode.getHttpStatus())
                 .message(errorCode.getMessage())
                 .build();
         String errorResponseJson = objectMapper.writeValueAsString(errorResponse);
 
-        response.setStatus(errorCode.getStatus());
+        response.setStatus(errorCode.getHttpStatus());
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.getWriter().write(errorResponseJson);
     }

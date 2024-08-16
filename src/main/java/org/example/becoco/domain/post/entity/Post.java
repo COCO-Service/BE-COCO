@@ -1,7 +1,6 @@
 package org.example.becoco.domain.post.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.example.becoco.domain.post.entity.type.Type;
 import org.example.becoco.domain.user.domain.User;
@@ -36,14 +35,12 @@ public class Post extends BaseTimeEntity {
     @Column(nullable = false)
     private Type type;
 
-    @NotBlank
     @Column(columnDefinition = "varchar(50)", nullable = false)
     private String title;
 
     @Column(columnDefinition = "varchar(200)")
     private String location;
 
-    @NotBlank
     @Column(columnDefinition = "TEXT", length = 2500, nullable = false)
     private String content;
 
