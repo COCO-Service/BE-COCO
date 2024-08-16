@@ -1,9 +1,9 @@
-package org.example.becoco.domain.auth.presentation;
+package org.example.becoco.domain.user.presentation;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.auth.service.AuthService;
-import org.example.becoco.domain.auth.presentation.dto.LoginRequest;
-import org.example.becoco.domain.auth.presentation.dto.TokenResponse;
+import org.example.becoco.domain.user.service.AuthService;
+import org.example.becoco.domain.user.presentation.dto.request.LoginRequest;
+import org.example.becoco.domain.user.presentation.dto.response.TokenResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

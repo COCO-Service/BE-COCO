@@ -5,10 +5,10 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.example.becoco.domain.user.domain.User;
 import org.example.becoco.global.security.principle.AuthDetailsService;
-import org.example.becoco.domain.auth.presentation.dto.TokenResponse;
-import org.example.becoco.domain.auth.domain.Auth;
-import org.example.becoco.domain.auth.exception.ExpiredTokenException;
+import org.example.becoco.domain.user.presentation.dto.response.TokenResponse;
+import org.example.becoco.domain.user.exception.ExpiredTokenException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,7 +23,7 @@ public class JwtProvider {
     private final JwtProperties jwtProperties;
     private final AuthDetailsService authDetailsService;
 
-    public TokenResponse getToken(Auth auth) {
+    public TokenResponse getToken(User auth) {
         String accessToken = generateAccessToken(auth.getUserName());
         return new TokenResponse(accessToken, jwtProperties.getAccessTokenTime());
     }
