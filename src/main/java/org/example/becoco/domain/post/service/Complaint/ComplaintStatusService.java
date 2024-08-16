@@ -17,7 +17,7 @@ public class ComplaintStatusService {
     private final UserFacade userFacade;
     private final PostFacade postFacade;
 
-    private void statusChange(Long id, ComplaintStatusRequest request) {
+    public void statusChange(Long id, ComplaintStatusRequest request) {
         User user = userFacade.getCurrentUser();
         Post post = postFacade.findPostById(id);
 
