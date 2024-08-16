@@ -1,4 +1,4 @@
-package org.example.becoco.domain.auth.presentation.dto;
+package org.example.becoco.domain.user.presentation.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

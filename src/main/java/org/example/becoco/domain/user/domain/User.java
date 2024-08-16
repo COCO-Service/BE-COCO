@@ -17,8 +17,11 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "name", updatable = false, unique = true, nullable = false)
-    private String name;
+    @Column(name = "user_name", updatable = false, unique = true, nullable = false)
+    private String userName;
+
+    @Column(name = "role", updatable = false, nullable = false)
+    private String role;
 
     @Column(name = "student_id", unique = true, nullable = false)
     private int studentId;

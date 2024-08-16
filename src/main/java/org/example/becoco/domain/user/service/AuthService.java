@@ -1,11 +1,11 @@
-package org.example.becoco.domain.auth.service;
+package org.example.becoco.domain.user.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.auth.presentation.dto.LoginRequest;
+import org.example.becoco.domain.user.presentation.dto.request.LoginRequest;
 import org.example.becoco.domain.auth.domain.Auth;
 import org.example.becoco.global.security.jwt.JwtProvider;
-import org.example.becoco.domain.auth.presentation.dto.TokenResponse;
-import org.example.becoco.domain.auth.domain.repository.AuthRepository;
+import org.example.becoco.domain.user.presentation.dto.response.TokenResponse;
+import org.example.becoco.domain.user.domain.repository.AuthRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

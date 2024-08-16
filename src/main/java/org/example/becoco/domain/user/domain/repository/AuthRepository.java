@@ -1,4 +1,4 @@
-package org.example.becoco.domain.auth.domain.repository;
+package org.example.becoco.domain.user.domain.repository;
 
 import org.example.becoco.domain.auth.domain.Auth;
 import org.springframework.data.jpa.repository.JpaRepository;

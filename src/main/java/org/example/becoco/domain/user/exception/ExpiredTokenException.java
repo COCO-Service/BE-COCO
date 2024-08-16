@@ -1,4 +1,4 @@
-package org.example.becoco.domain.auth.exception;
+package org.example.becoco.domain.user.exception;
 
 import org.example.becoco.global.error.exception.ErrorCode;
 import org.example.becoco.global.error.exception.CustomException;

@@ -22,8 +22,4 @@ public class Auth {
     private String userName;
     private String password;
     private String role;
-
-    public void getUserName(String userName) {
-        this.userName = userName;
-    }
 }

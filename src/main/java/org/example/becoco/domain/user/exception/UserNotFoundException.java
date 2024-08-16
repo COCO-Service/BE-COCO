@@ -1,7 +1,7 @@
 package org.example.becoco.domain.user.exception;
 
+import org.example.becoco.global.error.exception.CustomException;
 import org.example.becoco.global.error.exception.ErrorCode;
-import org.example.becoco.domain.global.error.exception.CustomException;
 
 
 public class UserNotFoundException extends CustomException {

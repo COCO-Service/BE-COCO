@@ -1,7 +1,7 @@
 package org.example.becoco.domain.post.exception;
 
+import org.example.becoco.global.error.exception.CustomException;
 import org.example.becoco.global.error.exception.ErrorCode;
-import org.example.becoco.global.domain.error.exception.CustomException;
 
 
 public class PostNotDeleteException extends CustomException {
