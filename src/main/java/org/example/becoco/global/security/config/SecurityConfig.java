@@ -44,8 +44,9 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/signup", "/login", "/post/read/**", "/comment/read/**").permitAll()
+                        .requestMatchers("/signup", "/login", "/post/list/**", "/comment").permitAll()
                         .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
+                        .requestMatchers("/post/notification/write").hasAuthority("ROLE_TEACHER"+"ROEL_DEVELOPER"+"ROLE_ADMIN")
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(exceptionHandling -> exceptionHandling
