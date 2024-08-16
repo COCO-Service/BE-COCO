@@ -18,7 +18,7 @@ public class PostUpdateService {
     private final UserFacade userFacade;
 
     public void updatePost(long id, PostUpdateRequest request) {
-        User user = userFacade.getCurrentUser();
+        User user = userFacade.currentUser();
         Post post = postFacade.findPostById(id);
 
         boolean checkPostWriter = !(user.getId().equals(post.getUser().getId()));

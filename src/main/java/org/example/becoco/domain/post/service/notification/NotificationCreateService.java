@@ -18,7 +18,7 @@ public class NotificationCreateService {
     private final UserFacade userFacade;
 
     public void postCreate(PostCreateRequest request) {
-        User user = userFacade.getCurrentUser();
+        User user = userFacade.currentUser();
 
         Post post = Post.builder()
                 .title(request.getTitle())

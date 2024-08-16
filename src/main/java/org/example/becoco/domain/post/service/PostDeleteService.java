@@ -17,7 +17,7 @@ public class PostDeleteService {
     private final PostFacade postFacade;
 
     public void postDelete(Long id) {
-        User user = userFacade.getCurrentUser();
+        User user = userFacade.currentUser();
         Post post = postFacade.findPostById(id);
         boolean checkPostWriter = !(user.getId().equals(post.getUser().getId()));
 
