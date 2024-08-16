@@ -1,7 +1,7 @@
 package org.example.becoco.domain.user.presentation;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.post.dto.response.PostListResponse;
+import org.example.becoco.domain.post.presentation.dto.response.PostListResponse;
 import org.example.becoco.domain.user.presentation.dto.response.UserInfoResponse;
 import org.example.becoco.domain.user.service.UserInfoService;
 import org.example.becoco.domain.user.service.UserPostsService;

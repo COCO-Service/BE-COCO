@@ -1,7 +1,7 @@
 package org.example.becoco.global.security.principle;
 
 import lombok.AllArgsConstructor;
-import org.example.becoco.domain.auth.entity.Auth;
+import org.example.becoco.domain.auth.domain.Auth;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
