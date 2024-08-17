@@ -1,9 +1,9 @@
-package org.example.becoco.domain.auth.facade;
+package org.example.becoco.domain.user.facade;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.auth.domain.Auth;
-import org.example.becoco.domain.auth.exception.UserNotFoundException;
-import org.example.becoco.domain.auth.domain.repository.AuthRepository;
+import org.example.becoco.domain.user.domain.User;
+import org.example.becoco.domain.user.domain.repository.AuthRepository;
+import org.example.becoco.domain.user.exception.UserNotFoundException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class AuthFacade {
     private final AuthRepository authRepository;
 
-    public Auth getCurrentUser() {
+    public User getCurrentUser() {
         return authRepository.findByUserName(SecurityContextHolder.getContext().getAuthentication().getName()).orElseThrow(()-> UserNotFoundException.EXCEPTION);
     }
 }

@@ -1,7 +1,7 @@
 package org.example.becoco.global.security.principle;
 
 import lombok.RequiredArgsConstructor;
-import org.example.becoco.domain.auth.domain.repository.AuthRepository;
+import org.example.becoco.domain.user.domain.repository.AuthRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;

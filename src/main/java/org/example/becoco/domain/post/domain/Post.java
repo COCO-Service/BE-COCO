@@ -21,7 +21,7 @@ public class Post extends BaseTimeEntity {
     private Long postId;
 
     @Column(nullable = false)
-    private boolean solved = false;
+    private boolean status = false;
 
     @CreatedDate
     @Column(name = "create_date", nullable = false)
