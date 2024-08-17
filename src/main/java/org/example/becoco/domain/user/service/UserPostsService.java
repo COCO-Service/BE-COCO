@@ -28,7 +28,7 @@ public class UserPostsService {
                         .title(post.getTitle())
                         .user(post.getUser())
                         .createDate(post.getCreateDate())
-                        .solved(post.isSolved())
+                        .status(post.isStatus())
                         .build())
                 .collect(Collectors.toList());
 
