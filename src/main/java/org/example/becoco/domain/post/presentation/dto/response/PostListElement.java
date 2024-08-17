@@ -14,5 +14,5 @@ public class PostListElement {
     private String title;
     private User user;
     private LocalDate createDate;
-    private boolean solved;
+    private boolean status;
 }
