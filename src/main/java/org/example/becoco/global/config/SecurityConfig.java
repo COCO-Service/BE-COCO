@@ -47,6 +47,7 @@ public class SecurityConfig {
                         .requestMatchers("/signup", "/login", "/post/list/**", "/comment").permitAll()
                         .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
                         .requestMatchers("/post/notification/write", "/post/complaint/status/**").hasAuthority("ROLE_TEACHER"+"ROEL_DEVELOPER"+"ROLE_ADMIN")
+                        .requestMatchers("/post/complaint/").hasAuthority("ROLE_TEACHER"+"ROLE_ADMIN"+"ROLE_STUDENT"+"ROLE_DEVELOPER")
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(exceptionHandling -> exceptionHandling
