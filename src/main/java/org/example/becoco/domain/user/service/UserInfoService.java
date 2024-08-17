@@ -17,7 +17,6 @@ public class UserInfoService {
 
         return UserInfoResponse.builder()
                 .userid(user.getUserId())
-                .name(user.getUserName())
                 .build();
     }
 }
