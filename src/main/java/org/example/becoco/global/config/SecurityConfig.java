@@ -45,9 +45,9 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/signup", "/login", "/post/list/**", "/comment").permitAll()
-                        .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
-                        .requestMatchers("/post/notification/write", "/post/complaint/status/**").hasAuthority("ROLE_TEACHER"+"ROEL_DEVELOPER"+"ROLE_ADMIN")
-                        .requestMatchers("/post/complaint/").hasAuthority("ROLE_TEACHER"+"ROLE_ADMIN"+"ROLE_STUDENT"+"ROLE_DEVELOPER")
+                        .requestMatchers("/admin/**").hasAnyRole("ADMIN")
+                        .requestMatchers("/post/notification/write/**", "/post/complaint/status/**").hasAnyRole("TEACHER","DEVELOPER","ADMIN")
+                        .requestMatchers("/post/complaint/**").hasAnyRole("TEACHER","ADMIN","STUDENT","DEVELOPER")
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(exceptionHandling -> exceptionHandling
